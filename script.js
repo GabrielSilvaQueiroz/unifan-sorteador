@@ -10,16 +10,17 @@ function sortear() {
     if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo) {
         alert("Por favor, insira valores válidos.");
         return;
-
-        var numerosSorteados = [];
-
-        // Sortear a quantidade de números desejada
-        for (var i = 0; i < quantidadeDeNumeros; i++) {
-            var numeroSorteado = Math.floor(Math.random() * (valorMaximo - valorMinimo + 1)) + valorMinimo;
-            numerosSorteados.push(numeroSorteado);
-        }
-
-        // Exibir os números sorteados no H2 com ID "resultado-numeros"
-        document.getElementById("resultado-numeros").textContent = "Números Sorteados: " + numerosSorteados.join(", ");
     }
+
+    var numerosSorteados = [];
+
+    // Sortear a quantidade de números desejada
+    for (var i = 0; i < quantidadeDeNumeros; i++) {
+        var numeroSorteado = Math.floor(Math.random() * (valorMaximo - valorMinimo + 1)) + valorMinimo;
+        numerosSorteados.push(numeroSorteado);
+    }
+
+    // Exibir os números sorteados no H2 com ID "resultado-numeros"
+    document.getElementById("resultado-numeros").textContent = "Números Sorteados: " + numerosSorteados.join(", ");
 }
+
