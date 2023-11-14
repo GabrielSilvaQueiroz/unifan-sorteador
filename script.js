@@ -10,38 +10,16 @@ function sortear() {
     if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo) {
         alert("Por favor, insira valores válidos.");
         return;
+
+        var numerosSorteados = [];
+
+        // Sortear a quantidade de números desejada
+        for (var i = 0; i < quantidadeDeNumeros; i++) {
+            var numeroSorteado = Math.floor(Math.random() * (valorMaximo - valorMinimo + 1)) + valorMinimo;
+            numerosSorteados.push(numeroSorteado);
+        }
+
+        // Exibir os números sorteados no H2 com ID "resultado-numeros"
+        document.getElementById("resultado-numeros").textContent = "Números Sorteados: " + numerosSorteados.join(", ");
     }
-
-<<<<<<< HEAD
-    // Validar se os valores são numéricos e se maximo >= minimo
-    if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo) {
-        alert("Por favor, insira valores válidos.");
-        return;
-    }
-
-    // Array para armazenar os números sorteados
-    var numerosSorteados = [];
-
-    // Sortear a quantidade de números desejada
-    for (var i = 0; i < quantidadeDeNumeros; i++) {
-        var numeroSorteado = Math.floor(Math.random() * (valorMaximo - valorMinimo + 1)) + valorMinimo;
-        numerosSorteados.push(numeroSorteado);
-    }
-
-    // Exibir os números sorteados no H2 com ID "resultado-numeros"
-    document.getElementById("resultado-numeros").textContent = "Números Sorteados: " + numerosSorteados.join(", ");
-=======
-    // Array para armazenar os números sorteados
-    var numerosSorteados = [];
-
-    // Sortear a quantidade de números desejada
-    for (var i = 0; i < quantidadeDeNumeros; i++) {
-        var numeroSorteado = Math.floor(Math.random() * (valorMaximo - valorMinimo + 1)) + valorMinimo;
-        numerosSorteados.push(numeroSorteado);
-    }
-
-    // Exibir os números sorteados no H2 com ID "resultado-numeros"
-    document.getElementById("resultado-numeros").textContent = "Números Sorteados: " + numerosSorteados.join(", ");
-}
->>>>>>> a08a311ea6217af225f32d89293746d8517109ce
 }
