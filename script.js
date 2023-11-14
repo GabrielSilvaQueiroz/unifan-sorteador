@@ -12,6 +12,12 @@ function sortear() {
         return;
     }
 
+    // Validar se os valores são numéricos e se maximo >= minimo
+    if (isNaN(quantidadeDeNumeros) || isNaN(valorMinimo) || isNaN(valorMaximo) || valorMaximo < valorMinimo) {
+        alert("Por favor, insira valores válidos.");
+        return;
+    }
+
     // Array para armazenar os números sorteados
     var numerosSorteados = [];
 
