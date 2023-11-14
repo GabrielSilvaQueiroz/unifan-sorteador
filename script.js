@@ -15,9 +15,13 @@ function sortear() {
     var numerosSorteados = [];
 
     // Sortear a quantidade de números desejada
-    for (var i = 0; i < quantidadeDeNumeros; i++) {
+    while (numerosSorteados.length < quantidadeDeNumeros) {
         var numeroSorteado = Math.floor(Math.random() * (valorMaximo - valorMinimo + 1)) + valorMinimo;
-        numerosSorteados.push(numeroSorteado);
+
+        // Verificar se o número já foi sorteado
+        if (numerosSorteados.indexOf(numeroSorteado) === -1) {
+            numerosSorteados.push(numeroSorteado);
+        }
     }
 
     // Exibir os números sorteados no H2 com ID "resultado-numeros"
