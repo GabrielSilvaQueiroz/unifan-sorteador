@@ -12,18 +12,16 @@ function sortear() {
         return;
     }
 
-    // Set para garantir unicidade dos números sorteados
-    var numerosSorteados = new Set();
+    // Array para armazenar os números sorteados
+    var numerosSorteados = [];
 
     // Sortear a quantidade de números desejada
-    while (numerosSorteados.size < quantidade) {
-        var numeroSorteado = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
-        numerosSorteados.add(numeroSorteado);
+    for (var i = 0; i < quantidadeDeNumeros; i++) {
+        var numeroSorteado = Math.floor(Math.random() * (valorMaximo - valorMinimo + 1)) + valorMinimo;
+        numerosSorteados.push(numeroSorteado);
     }
 
-    // Converter o Set para um array para exibição
-    var arraySorteados = Array.from(numerosSorteados);
-
-    // Exibir os números sorteados no elemento com ID "resultado-numeros"
-    document.getElementById("resultado-numeros").textContent = "Números Sorteados: " + arraySorteados.join(", ");
+    // Exibir os números sorteados no H2 com ID "resultado-numeros"
+    document.getElementById("resultado-numeros").textContent = "Números Sorteados: " + numerosSorteados.join(", ");
+}
 }
